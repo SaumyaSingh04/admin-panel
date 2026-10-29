@@ -4,6 +4,13 @@ import type { NextConfig } from "next";
 // is proxied to BACKEND_URL, so the Better Auth session cookie lives on the
 // admin host and the backend's CSRF guard sees this host's Origin — which is
 // why that origin must be listed in the backend's ALLOWED_ORIGINS.
+//
+// The rewrite is compiled into the build, so a production build without
+// BACKEND_URL (e.g. a Coolify build variable left empty, which overrides the
+// Dockerfile default) would silently proxy to localhost. Fail the build instead.
+if (process.env.NODE_ENV === "production" && !/^https?:\/\/[^/]/i.test(process.env.BACKEND_URL ?? "")) {
+  throw new Error("BACKEND_URL must be set to the backend's base URL (e.g. https://api.revcoraos.com, without /api/v1) for a production build.");
+}
 const BACKEND_URL = (process.env.BACKEND_URL || "http://localhost:5000").replace(/\/+$/, "");
 
 const nextConfig: NextConfig = {

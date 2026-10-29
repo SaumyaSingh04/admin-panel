@@ -14,6 +14,7 @@ ENV NODE_ENV=production \
     NEXT_TELEMETRY_DISABLED=1
 # The /api/v1 rewrite target is compiled into the build, so the backend URL
 # is a build argument; setting it at runtime has no effect.
+# In Coolify, mark BACKEND_URL as a "Build Variable" to override this.
 ARG BACKEND_URL=https://api.revcoraos.com
 ENV BACKEND_URL=$BACKEND_URL
 COPY --from=deps /app/node_modules ./node_modules
