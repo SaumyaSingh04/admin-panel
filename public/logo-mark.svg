@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+<defs><linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#4c1d95"/></linearGradient>
+<linearGradient id="l" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs>
+<path fill-rule="evenodd" fill="url(#m)" d="M4 6H29C37.5 6 43.5 11 43.5 18.5C43.5 25 39.500 29.500 33 31H17V46H4ZM17 16V23H28.500C31 23 32 21.500 32 19.500C32 17.500 31 16 28.500 16Z"/>
+<path fill="url(#l)" d="M25 31.500H36.500L48 46H36Z"/>
+</svg>
