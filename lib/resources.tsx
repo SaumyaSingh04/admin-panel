@@ -66,6 +66,17 @@ export const RESOURCES: Record<string, ResourceConfig> = {
     endpoint: "/admin/tool-registry",
     pagination: false,
     rowKey: "toolKey",
+    // Explicit, because auto-columns stopped at `isAsync` and its "No" read as
+    // "inactive" for the synchronous tools; `isEnabled` is the on/off switch.
+    columns: [
+      { key: "displayName", label: "Tool" },
+      { key: "toolKey" },
+      { key: "category" },
+      { key: "providerType", label: "Type" },
+      { key: "isEnabled", label: "Enabled" },
+      { key: "isPublic", label: "Public" },
+      { key: "isAsync", label: "Background job" },
+    ],
   },
   "ai-apps": {
     title: "AI apps",
