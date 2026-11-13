@@ -31,6 +31,7 @@ const NAV: NavGroup[] = [
     items: [
       { href: "/generations", label: "Generations", icon: ImageIcon },
       { href: "/jobs", label: "Jobs & queues", icon: Activity },
+      { href: "/agents", label: "Agent executions", icon: Bot },
     ],
   },
   {
