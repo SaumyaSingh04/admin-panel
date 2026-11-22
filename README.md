@@ -57,6 +57,14 @@ docker run -p 3000:3000 admin-panel
   `ALLOWED_ORIGINS`.
 - Serve it over HTTPS, and preferably restrict access by IP or VPN as well.
 
+### Coolify
+
+- Build Pack **Dockerfile**, Base Directory `/`, Ports Exposes `3000`.
+- Build Variable `BACKEND_URL=https://api.revcoraos.com` (a runtime value has no
+  effect; changing it requires a redeploy).
+- Health check path `/healthz`; enable **Auto Deploy** so a push to `main`
+  builds and deploys on the VPS. No GitHub Actions workflow is used.
+
 ## What's in it
 
 | Section | Route | Notes |
