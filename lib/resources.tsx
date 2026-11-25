@@ -142,22 +142,6 @@ export const RESOURCES: Record<string, ResourceConfig> = {
     edit: {},
     remove: {},
   },
-  "topup-packages": {
-    superOnly: true,
-    title: "Top-up packs",
-    endpoint: "/admin-panel/topups/packages",
-    edit: { path: (r) => `/admin-panel/topups/packages/${r.id}` },
-    create: { template: { name: "", credits: 100, price: 9.99, currency: "USD" } },
-    actions: [
-      { label: "Activate", show: (r) => r.isActive === false, run: (r) => api(`/admin-panel/topups/packages/${r.id}/activate`, { method: "POST", body: {} }) },
-      { label: "Deactivate", show: (r) => r.isActive !== false, run: (r) => api(`/admin-panel/topups/packages/${r.id}/deactivate`, { method: "POST", body: {} }) },
-    ],
-  },
-  "topup-orders": {
-    superOnly: true,
-    title: "Top-up orders",
-    endpoint: "/admin-panel/topups/orders",
-  },
   coupons: {
     superWrites: true,
     title: "Coupons",

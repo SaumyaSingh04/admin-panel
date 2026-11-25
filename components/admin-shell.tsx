@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Activity, BadgePercent, Bell, Bot, Boxes, CreditCard, Crown, FileText, Flag, Gauge, HardDrive, HelpCircle, Image as ImageIcon, Layers,
-  LifeBuoy, LogOut, Megaphone, Menu, Mic, Navigation, Package, Palette, Plug, Receipt, ScrollText, Shield, Sparkles, Users, Wallet, Wrench, X,
+  LifeBuoy, LogOut, Megaphone, Menu, Mic, Navigation, Palette, Plug, Receipt, ScrollText, Shield, Sparkles, Users, Wallet, Wrench, X,
 } from "lucide-react";
 import { ApiError, api, getSession, signOut } from "@/lib/api";
 import { Button, Spinner, cx } from "./ui";
@@ -62,8 +62,6 @@ const NAV: NavGroup[] = [
       { href: "/admins", label: "Admins & roles", icon: Crown },
       { href: "/manage/subscriptions", label: "Subscriptions", icon: CreditCard },
       { href: "/manage/payments", label: "Payments", icon: Receipt },
-      { href: "/manage/topup-packages", label: "Top-up packs", icon: Package },
-      { href: "/manage/topup-orders", label: "Top-up orders", icon: Receipt },
       { href: "/manage/guest-credits", label: "Guest credits", icon: Wallet },
     ],
   },
